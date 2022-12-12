@@ -1,7 +1,4 @@
-# 🔔 Documentation 🔔
-
 <h2 align="center">In the link you will find everything about the base, preview, installation steps, recommendations, etc.</h2>
-
 
  <div align="center">
   <a href="https://ip-development.gitbook.io/ip-development/">
