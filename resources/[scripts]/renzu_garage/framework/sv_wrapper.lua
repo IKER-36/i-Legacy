@@ -59,7 +59,7 @@ function Initialized()
 	Citizen.CreateThread(function()
 		GlobalState.VehicleNickNames = {}
 		Wait(1000)
-		print("^2 -------- renzu_garage v1.8 Starting.. ----------^7")
+		print("^2 -------- Renzu Garage System Starting. ----------^7")
 		GlobalState.GVehicles = {}
 		GlobalState.VehiclesState = {}
 		GlobalState.Gshare = {}
@@ -67,30 +67,30 @@ function Initialized()
 		local Infinity = GetConvar('onesync_enableInfinity', false) == 'true'
 		if not OneSync and not Infinity then
 			while true do
-				print('^1One Sync is Disable: This garage need ^2OneSync^7 ^5Enable^5 ^7')
+				print('^1One Sync is Disable: This garage need ^2OneSync^7 ^5Enabled^5 ^7')
 				Wait(1000)
 			end
 		elseif Infinity then print('^2Server is running OneSync Infinity^7') else print('^2Server is running OneSync Legacy^7') end
-		print("^2 Checking vehicles table ^7")
+		--print("^2 Checking vehicles table ^7")
 		vehicles = Config.Vehicles
 		local vehicles_ = {}
 		for k,v in pairs(vehicles) do
 			vehicles_[GetHashKey(k)] = v
 		end
-		print("^2 vehicles ok ^7")
+		--print("^2 vehicles ok ^7")
 		GlobalState.VehicleinDb = vehicles_
 		if not GlobalState.VehiclesState then
 			GlobalState.VehiclesState = {}
 		end
-		print("^2 Checking '..vehicletable..' isparked column table ^7")
+		--print("^2 Checking '..vehicletable..' isparked column table ^7")
 		parkedvehicles = MysqlGarage(Config.Mysql,'fetchAll','SELECT * FROM '..vehicletable..' WHERE isparked = 1', {}) or {}
-		print("^2 '..vehicletable..' isparked column ok ^7")
+		--print("^2 '..vehicletable..' isparked column ok ^7")
 		globalvehicles = MysqlGarage(Config.Mysql,'fetchAll','SELECT '..owner..', plate, '..vehiclemod..' FROM '..vehicletable..'', {}) or {}
-		print("^2 Checking garagekeys table ^7")
+		--print("^2 Checking garagekeys table ^7")
 		local resgaragekeys = MysqlGarage(Config.Mysql,'fetchAll','SELECT * FROM garagekeys', {})
-		print("^2 garagekeys table ok ^7")
+		--print("^2 garagekeys table ok ^7")
 		if resgaragekeys and resgaragekeys[1] then
-			print("^2 saving garagekeys data ^7")
+			--print("^2 saving garagekeys data ^7")
 			for k,v in pairs(resgaragekeys) do
 				if v.identifier and v.keys then
 					local garagekey = json.decode(v.keys) or {}
@@ -104,7 +104,7 @@ function Initialized()
 					end
 				end
 			end
-			print("^2 garagekeys data saved ^7")
+			--print("^2 garagekeys data saved ^7")
 		end
 		--checking vehicle keys
 		vkeys = MysqlGarage(Config.Mysql,'fetchAll','SELECT * FROM vehiclekeys', {})
@@ -127,7 +127,7 @@ function Initialized()
 		end
 		GlobalState.HousingGarages = housingtemp
 	
-		print("^2 saving job prefix plates data ^7")
+		--print("^2 saving job prefix plates data ^7")
 		for k,v in pairs(garagecoord) do
 			if v.job and v.default_vehicle then
 				for k2,v2 in pairs(v.default_vehicle) do
@@ -137,11 +137,11 @@ function Initialized()
 				end
 			end
 		end
-		print("^2 job prefixes plates data saved ^7")
-		print("^2 Checking parking_meter table ^7")
+		--print("^2 job prefixes plates data saved ^7")
+		--print("^2 Checking parking_meter table ^7")
 		parkmeter = MysqlGarage(Config.Mysql,'fetchAll','SELECT * FROM parking_meter', {}) or {}
-		print("^2 parking_meter table ok ^7")
-		print("^2 Caching #"..#globalvehicles.." Vehicles Please Wait.. ^7")
+		--print("^2 parking_meter table ok ^7")
+		--print("^2 Caching #"..#globalvehicles.." Vehicles Please Wait.. ^7")
 		local vehiclescount = #globalvehicles
 		local tempvehicles = {}
 		local ownedvehicles = {}
@@ -171,21 +171,21 @@ function Initialized()
 		vehicles_ = nil
 		GlobalState.GVehicles = tempvehicles
 		tempvehicles = nil
-		print("^2 Cache Saved ^7")
-		print("^2 Checking impound_garage table ^7")
+		--print("^2 Cache Saved ^7")
+		--print("^2 Checking impound_garage table ^7")
 		impoundget = MysqlGarage(Config.Mysql,'fetchAll','SELECT * FROM impound_garage', {})
-		print("^2 impound_garage table ok ^7")
+		--print("^2 impound_garage table ok ^7")
 		for k,v in pairs(impoundget) do
 			impound_G[v.garage] = json.decode(v.data) or {}
 		end
-		print("^2 Auto Import impound_garage table default data ^7")
+		--print("^2 Auto Import impound_garage table default data ^7")
 		for k,v in pairs(impoundcoord) do
 			MysqlGarage(Config.Mysql,'execute','INSERT IGNORE INTO impound_garage (garage, data) VALUES (@garage, @data)', {
 				['@garage']   = v.garage,
 				['@data']   = '[]'
 			})
 		end
-		print("^2 impound_data Import success ^7")
+		--print("^2 impound_data Import success ^7")
 		Wait(100)
 		if Config.RefreshOwnedVehiclesOnStart and not GlobalState.RefreshVehicle then
 			MysqlGarage(Config.Mysql,'execute','UPDATE '..vehicletable..' SET `'..stored..'` = @stored', {
@@ -194,7 +194,7 @@ function Initialized()
 			GlobalState.RefreshVehicle = true
 		end
 		GlobalState.VehicleNickNames = json.decode(GetResourceKvpString('vehiclenicks') or '[]') or {}
-		print("^2 -------- renzu_garage v1.8 Started ----------^7")
+		print("^2 -------- Renzu Garage System Started Correctly ----------^7")
 	end)
 end
 

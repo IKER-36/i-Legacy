@@ -2,4 +2,4 @@
 
 echo Abriendo el servidor...
 timeout 2 > NUL
-C:\dlls\FXServer.exe +exec E:\FiveM\iker-legacy\server.cfg +set onesync on 1
+C:\dlls\FXServer.exe +exec E:\FiveM\i-Legacy\i-Legacy\server.cfg +set onesync on 1
