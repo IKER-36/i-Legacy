@@ -1,0 +1,40 @@
+{
+  "PhoneAsItem": {
+    "enabled": false,
+    "exportResource": "my-core-resource",
+    "exportFunction": "myCheckerFunction"
+  },
+  "general": {
+    "useResourceIntegration": true,
+    "toggleKey": "f1",
+    "toggleCommand": "phone",
+    "defaultLanguage": "es"
+  },
+  "profanityFilter": {
+    "enabled": false,
+    "badWords": ["esx"]
+  },
+  "database": {
+    "useIdentifierPrefix": true,
+    "playerTable": "users",
+    "identifierColumn": "identifier",
+    "identifierType": "license",
+    "profileQueries": true,
+    "phoneNumberColumn": "phone_number"
+  },
+  "debug": {
+    "level": "error",
+    "enabled": true,
+    "sentryEnabled": true
+  },
+  "images": {
+    "useWebhook": true
+  },
+  "apps": ["pefcl"],
+  "voiceMessage": {
+    "enabled": false,
+    "authorizationHeader": "PE-Secret",
+    "url": "",
+    "returnedDataIndexes": ["url"]
+  }
+}

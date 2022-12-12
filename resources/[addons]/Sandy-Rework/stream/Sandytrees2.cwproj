@@ -1,0 +1,28 @@
+<CodeWalkerProject>
+  <Name>Sandytrees2</Name>
+  <Version value="1" />
+  <YmapFilenames>
+    <Item>props.ymap</Item>
+    <Item>streetligits.ymap</Item>
+    <Item>streetligits2.ymap</Item>
+    <Item>tree_cedar_02.ymap</Item>
+    <Item>tree_eng_oak_01.ymap</Item>
+    <Item>tree_eng_oak_cr2.ymap</Item>
+    <Item>tree_maple_03.ymap</Item>
+    <Item>tree_oak_01.ymap</Item>
+    <Item>tree_olive_01.ymap</Item>
+    <Item>tree_pine_01.ymap</Item>
+    <Item>tree_pine_02.ymap</Item>
+  </YmapFilenames>
+  <YtypFilenames />
+  <YbnFilenames />
+  <YndFilenames />
+  <YnvFilenames />
+  <TrainsFilenames />
+  <ScenarioFilenames />
+  <AudioRelFilenames />
+  <YdrFilenames />
+  <YddFilenames />
+  <YftFilenames />
+  <YtdFilenames />
+</CodeWalkerProject>

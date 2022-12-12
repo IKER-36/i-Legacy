@@ -1,0 +1,127 @@
+@font-face{
+    font-family: Frank;
+    src: url("https://cdn.discordapp.com/attachments/839958624340148314/1040718200465281024/Gobold_Regular.ttf");
+}
+
+@font-face{
+    font-family: nfont2;
+    src: url("https://cdn.discordapp.com/attachments/839958624340148314/1040703952397807626/BoxedRoundLight.ttf");
+}
+
+.menu {
+	font-family: nfont2;
+	font-size: 10px;
+	padding: 12px;
+	min-width: 270px;
+	color: #fff;
+	text-align: left;
+	position: absolute;
+}
+
+.menu.align-left {
+	left: 80%;
+	top: 40%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-top-left {
+	left: 80%;
+	top: 40%;
+}
+
+.menu.align-top {
+	left: 80%;
+	top: 40%;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-top-right {
+	left: 80%;
+	top: 40%;
+}
+
+.menu.align-right {
+	left: 80%;
+	top: 40%;
+	transform: translate(0, -50%);
+}
+
+.menu.align-bottom-right {
+	left: 80%;
+	top: 40%;
+}
+
+.menu.align-bottom {
+	left: 80%;
+	top: 40%;
+	transform: translate(-50%, 0);
+}
+
+.menu.align-bottom-left {
+	left: 80%;
+	top: 40%;
+}
+
+.menu.align-center {
+	left: 80%;
+	top: 40%;
+	transform: translate(-50%, -50%);
+}
+
+::-webkit-scrollbar {
+	width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgb(255, 255, 255);
+	border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+	background: rgb(255, 255, 255);
+	border-radius: 5px;
+  }
+
+.menu .head {
+    position: absolute;
+    top: -5px;
+	padding: 0.15vw;
+    right: 30;
+    font-family: Frank;
+    font-size: .7vw;
+    color: rgb(255, 255, 255);
+	letter-spacing: 0.1vw;
+	background: linear-gradient(90deg, rgb(20, 20, 20) 3%, rgb(241, 28, 28) 100%);
+    box-shadow: 0 0 8px rgb(20, 20, 20), 0 0 10px rgb(39, 26, 26), 0 0 10px rgb(241, 28, 28), 0 0 10px rgb(241, 28, 28);
+	text-align: center;
+	border-radius: 0.3vw;
+}
+
+.menu .menu-items {
+	background: rgba(0, 0, 0, 0.726);
+	box-shadow: 0 0 7px black;
+	padding: .5vw;
+	border-radius: 0.1vw;
+	max-height: 450px;
+	overflow-y: auto;
+}
+
+.menu .menu-items .menu-item {
+	background-color: rgba(0, 0, 0, 0.422);
+    text-shadow: 1px 1px black;
+	display: block;
+	padding: 6px;
+	font-size: 14px;
+	text-align: left;
+	text-indent: 5px;
+	margin-top: 5px;
+	color: #ffffff;
+	border-radius: 3px;
+}
+
+.menu .menu-items .menu-item.selected {
+	background: linear-gradient(90deg, rgb(20, 20, 20) 3%, rgb(241, 28, 28) 100%);
+    box-shadow: 0 0 8px rgb(20, 20, 20), 0 0 10px rgb(39, 26, 26), 0 0 10px rgb(241, 28, 28), 0 0 10px rgb(241, 28, 28);
+	font-weight: 600;
+	color: #ffffffe3;
+}

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dispatch</title>
+        <link rel="stylesheet" href="style.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="https://kit.fontawesome.com/a412d17519.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/fc96155a5f.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+        <link rel=’stylesheet’ id=’jquery-ui-css-css’ href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/themes/smoothness/jquery-ui.css?ver=5.2.4&#8242" type=’text/css’ media=’all’ />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500&display=swap" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com">
+
+        <script src="app.js"></script>
+    </head>
+    <body>
+        <div id="alerts-container"></div>
+            <div id="all">
+                <!-- <div class="t-frame-class" id="t-frame-id">
+                    <div class="t-frame" id="t-frame">
+                        <div class="t-frame-sup-border"></div>
+                        
+                        <div class="t-frame-inf-border"></div>
+                        <div class="t-frame-grey"></div><h1 id = "text" class="t-frame-grey-content">Sin llamadas recibidas</h1></div>
+                    </div>
+                    <div class="t-frame-grey">
+                        <img src="https://i.imgur.com/4v1LZXX.png" style="margin-top: -36px;float: left;margin-left: 94px;">
+                        <h1 class="t-frame-grey-title">Central de avisos</h1></div>
+                    
+                    <image class="right" src="right.png">
+                    <image class="left" src="left.png">
+                    <div class="callnum" id="callnum">0 /</div>
+                    <div id="num" class="num">0</div>
+                </div> -->
+                <div class="contenedor">
+                    <div class="n-avisos">
+                        <!-- <i class="fa-solid fa-circle-exclamation"></i> -->
+                        <span id="callnum">0</span>/<span id="num">0</span>
+                    </div>
+                    <div class="cabecera">
+                        <div class="titulo">
+                            Llamadas Entrantes
+                        </div>
+                       
+                    </div>
+                    <div class="avisos" id="text">
+                    </div>
+                    <div class="controles">
+                        <div class="col central">
+                            <i class="fa-solid fa-caret-left"></i>
+                           
+                        </div>
+                        <div class="col central">
+                            <i class="fa-solid fa-caret-right"></i>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="menu" class="menu-style">
+                <button class="minimenu-button" id="minimenu-button">Borrar alerta</button>
+                <button class="minimenu-button-deleteall" id="delete-button" style="vertical-align:middle"><span>Borrar alertas </span></button>
+                <hr>
+                <!-- <button class="minimenu-button-images" id="images-button" style="vertical-align:middle"><span>Ver imágenes </span></button> -->
+                <button class="minimenu-button-togglealerts" id="togglealerts-button" style="vertical-align:middle"><span>Activar/desactivar alertas </span></button>
+            </ul>
+        </div>
+        <div id="configmenu">
+            <div class="t-menuclass" id="t-menu-id"></div>
+                
+        
+                <span class="menu-titlename">Menú de Configuración/Alertas</span>
+
+                <div style="overflow-y: scroll;max-height: 536px;padding-right: 25px;margin-top: 51px;">
+                    <table class="alerts-table" id="table" style="width: 100%; " id="table"></table>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

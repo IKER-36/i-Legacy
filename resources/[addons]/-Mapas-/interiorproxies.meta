@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<SInteriorOrderData>
+    <startFrom value="2000" />
+    <filePathHash value="0" />
+    <proxies>
+        <Item>bh1_occl_05</Item>
+        <Item>guberheli</Item>
+        <Item>hei_bh1_rd_critical_3</Item>
+        <Item>int_cityhall_milo_</Item>
+        <Item>apa_distlodlights_medium019</Item>
+        <Item>apa_distlodlights_small029</Item>
+        <Item>apa_lodlights_medium019</Item>
+        <Item>apa_lodlights_small029</Item>
+        <Item>gabz_mrpd_ext</Item>
+        <Item>gabz_mrpd_milo_</Item>
+        <Item>hei_ch3_04_strm_0</Item>
+        <Item>hei_dt1_19_critical_0</Item>
+        <Item>hei_dt1_19_interior_0_heist_police_dlc_milo_</Item>
+        <Item>hei_dt1_19_strm_0</Item>
+        <Item>hei_dt1_rd1_critical_1</Item>
+        <Item>hei_dt1_19</Item>
+        <Item>hei_dt1_occl_05</Item>
+        <Item>hei_dt1_rd1_strm_5</Item>
+        <Item>hei_id2_occl_00</Item>
+        <Item>lightslsc</Item>
+        <Item>gabz_pillbox_milo_</Item>
+        <Item>hei_hw1_12_strm_0</Item>
+        <Item>hw1_occl_01</Item>
+        <Item>int_taxi_milo_</Item>
+        <Item>map1</Item>
+        <Item>hei_dt1_rd1_strm_7</Item>
+        <Item>hei_dt1_rd1_strm_6</Item>
+    </proxies>
+</SInteriorOrderData>

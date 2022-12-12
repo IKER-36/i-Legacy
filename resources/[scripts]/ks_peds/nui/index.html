@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <script src="https://kit.fontawesome.com/598378e634.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="styles.css">
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script src="./app.js" type="text/javascript" defer></script>
+        <script src="./classes/Ped.js" defer></script>
+        <link rel="stylesheet" href="styles.css">
+        <title>KS FUEL SYSTEM</title>
+    </head>
+
+    <body>
+
+        <div class="grid place-items-center h-screen w-screen" id="MAin">
+            <section class="bg-gray-900 w-2/4 h-2.5/4 r-2 rounded-2xl text-gray-50 flex flex-col justify-between  w-1/5 consol ">
+                <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded-t-2xl dark:bg-gray-800">
+                    <div class="container flex flex-wrap justify-between items-center mx-auto">
+                        <div class="mr-3 h-10 flex flex-wrap ml-2">
+                            <button class="self-center text-lg font-semibold whitespace-nowrap dark:text-white flex items-center"><img src="./img/logo.png" alt="Logo" width="40" class="mr-4">KS-PEDS</button>
+                        </div>
+                        <div class="hidden w-full md:block md:w-auto" id="mobile-menu">
+                            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+                                <li>
+                                    <button id="Home"
+                                        class="home block py-2 pr-4 pl-3 text-gray-700 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white  m-2 mr-0">
+                                        <i class="fa-solid fa-xmark font-semibold m-3 hover:text-red"></i>
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                
+                <section id="HomePage" class="h-3/6	 bg-slate-800 m-10 rounded-xl text-center font-poppins max-h-96 ">
+
+                    <header class="m-5 z-50 h-50 max-h-50 overflow-hidden">
+                        <div id="container" class="m-5 flex flex-col items-center algin-center self-center justify-center">
+                            <button id="default_ped" class="bg-green-900 w-50 hover:bg-blue-800 text-white py-2 px-4 rounded m-3 flex flex-row items-center h-70 w-full justify-between ">
+                                <i class="fa-solid fa-bolt text-2xl"></i>
+                                <span id="deposito2 m-5 text-right">Ped Default</span>
+                            </button>
+                        </div>
+
+                    </header>
+
+                </section>
+    
+                <footer class="relative align-text-bottom text-center m-4 text-slate-600">
+                    KS
+                </footer>
+    
+            </section>
+    
+        </div>
+
+    </body>
+</html>

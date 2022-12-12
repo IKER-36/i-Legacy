@@ -1,0 +1,68 @@
+@font-face {
+    font-family: Boxed;
+    src: url("https://cdn.discordapp.com/attachments/839958624340148314/1040717298710880336/Evogria.ttf");
+}
+
+.container{
+    position: absolute;
+    left: 95%;
+    bottom: 6%;
+    transform: translateX(-50%);
+    width: 8vw;
+    height: 4vw;
+    background: none;
+    border-radius: 0.4vw;
+}
+
+#velocidad{
+    position: absolute;
+    font-family: Boxed;
+    font-size: 2vw;
+    color:white;
+    text-shadow: 1px 2px 2px black;
+    background: linear-gradient(90deg, rgb(20, 20, 20) 3%, rgb(241, 28, 28) 100%);
+    box-shadow: 0 0 8px rgb(20, 20, 20), 0 0 10px rgb(39, 26, 26), 0 0 10px rgb(241, 28, 28), 0 0 10px rgb(241, 28, 28);
+    padding: 0.4vw;
+    border-radius: 0.2vw;
+    left: 13%;
+    letter-spacing: -0.2vw;
+    bottom: 14%;
+}
+
+#gasolina-icon{
+    position: absolute;
+    color: rgb(255, 255, 255);
+    font-size: 0.55vw;
+    text-shadow: 1px 2px 2px black;
+    background-color: rgba(0, 0, 0, 0.616);
+    padding: 0.2vw;
+    box-shadow: 0 0 4px black;
+    border-radius: 0.1vw;
+    left: 9%;
+    bottom: -5%;
+    padding-right: 1.7vw;
+}
+
+#gasolina{
+    position: absolute;
+    font-family: Boxed;
+    font-size: 0.7vw;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+    left: 21.5%;
+    bottom: -5%;
+}
+
+#km{
+    position: absolute;
+    font-family: Boxed;
+    background-color: rgba(0, 0, 0, 0.616);
+    font-size: 0.7vw;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+    box-shadow: 0 0 4px black;
+    border-radius: 0.1vw;
+    padding: 0.2vw;
+    left: 38%;
+    bottom: 87%;
+}

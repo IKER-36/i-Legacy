@@ -1,0 +1,77 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    /* overflow: hidden; */
+}
+
+.main {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.progressbar {
+    width: 100%;
+    background: #0f172a;
+    height: 14px;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+.content {
+    height: 13px;
+    background: white;
+    border-radius: 15px;
+    width: 155px;
+}
+
+#coso {
+    display: flex;
+    flex-direction: column;
+}
+
+.consol {
+    margin-bottom: 10%;
+    margin-right: 1%;
+}
+
+#svg {
+    margin: 20px;
+}
+
+#efectivo {
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    /* display: none; */
+    width: 8px;
+    margin-right: 10px;
+    /* height: 20px; */
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 100vh;
+    background: rgba(0, 15, 24, 0.784);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+}
+
+.mainContent {
+    overflow: hidden;
+}
+
+::-webkit-scrollbar-button {
+    /* height: 90%; */
+}
+
+#HomePage {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
