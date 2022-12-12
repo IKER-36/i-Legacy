@@ -2,12 +2,14 @@
 -- Host:                         127.0.0.1
 -- Versión del servidor:         10.4.27-MariaDB - mariadb.org binary distribution
 -- SO del servidor:              Win64
--- HeidiSQL Versión:             11.3.0.6295
+-- HeidiSQL Versión:             12.2.0.6576
 -- --------------------------------------------------------
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET NAMES utf8 */;
 /*!50503 SET NAMES utf8mb4 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
@@ -26,8 +28,7 @@ CREATE TABLE IF NOT EXISTS `addon_account` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.addon_account: ~8 rows (aproximadamente)
-/*!40000 ALTER TABLE `addon_account` DISABLE KEYS */;
-INSERT IGNORE INTO `addon_account` (`name`, `label`, `shared`) VALUES
+INSERT INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('bank_savings', 'Livret Bleu', 0),
 	('caution', 'caution', 0),
 	('society_ambulance', 'EMS', 1),
@@ -36,7 +37,6 @@ INSERT IGNORE INTO `addon_account` (`name`, `label`, `shared`) VALUES
 	('society_mechanic', 'Mechanic', 1),
 	('society_police', 'Police', 1),
 	('society_taxi', 'Taxi', 1);
-/*!40000 ALTER TABLE `addon_account` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.addon_account_data
 CREATE TABLE IF NOT EXISTS `addon_account_data` (
@@ -47,11 +47,10 @@ CREATE TABLE IF NOT EXISTS `addon_account_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_addon_account_data_account_name_owner` (`account_name`,`owner`),
   KEY `index_addon_account_data_account_name` (`account_name`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.addon_account_data: ~8 rows (aproximadamente)
-/*!40000 ALTER TABLE `addon_account_data` DISABLE KEYS */;
-INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
+INSERT INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`) VALUES
 	(1, 'society_cardealer', 0, NULL),
 	(2, 'society_police', 50000000, NULL),
 	(3, 'society_ambulance', 50000000, NULL),
@@ -59,8 +58,11 @@ INSERT IGNORE INTO `addon_account_data` (`id`, `account_name`, `money`, `owner`)
 	(5, 'society_taxi', 0, NULL),
 	(9, 'society_banker', 0, NULL),
 	(10, 'caution', 0, 'char1:f0e176ec5a87adad3df08d798b614090645a655a'),
-	(11, 'bank_savings', 0, 'char1:f0e176ec5a87adad3df08d798b614090645a655a');
-/*!40000 ALTER TABLE `addon_account_data` ENABLE KEYS */;
+	(11, 'bank_savings', 0, 'char1:f0e176ec5a87adad3df08d798b614090645a655a'),
+	(12, 'caution', 0, 'char1:c72291f2bfcefacb25a4c545f466189768a9b209'),
+	(13, 'bank_savings', 0, 'char1:c72291f2bfcefacb25a4c545f466189768a9b209'),
+	(14, 'caution', 0, 'char1:9460f7721e8516636a62801744f6daccdeb32db7'),
+	(15, 'bank_savings', 0, 'char1:9460f7721e8516636a62801744f6daccdeb32db7');
 
 -- Volcando estructura para tabla es_extended.addon_inventory
 CREATE TABLE IF NOT EXISTS `addon_inventory` (
@@ -71,14 +73,12 @@ CREATE TABLE IF NOT EXISTS `addon_inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.addon_inventory: ~5 rows (aproximadamente)
-/*!40000 ALTER TABLE `addon_inventory` DISABLE KEYS */;
-INSERT IGNORE INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
+INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
 	('society_ambulance', 'EMS', 1),
 	('society_cardealer', 'Cardealer', 1),
 	('society_mechanic', 'Mechanic', 1),
 	('society_police', 'Police', 1),
 	('society_taxi', 'Taxi', 1);
-/*!40000 ALTER TABLE `addon_inventory` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.addon_inventory_items
 CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
@@ -94,8 +94,6 @@ CREATE TABLE IF NOT EXISTS `addon_inventory_items` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.addon_inventory_items: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `addon_inventory_items` DISABLE KEYS */;
-/*!40000 ALTER TABLE `addon_inventory_items` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.banking
 CREATE TABLE IF NOT EXISTS `banking` (
@@ -109,8 +107,6 @@ CREATE TABLE IF NOT EXISTS `banking` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla es_extended.banking: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `banking` DISABLE KEYS */;
-/*!40000 ALTER TABLE `banking` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.billing
 CREATE TABLE IF NOT EXISTS `billing` (
@@ -125,8 +121,6 @@ CREATE TABLE IF NOT EXISTS `billing` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.billing: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `billing` DISABLE KEYS */;
-/*!40000 ALTER TABLE `billing` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.cardealer_vehicles
 CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
@@ -137,8 +131,6 @@ CREATE TABLE IF NOT EXISTS `cardealer_vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.cardealer_vehicles: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `cardealer_vehicles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cardealer_vehicles` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.characters_motels
 CREATE TABLE IF NOT EXISTS `characters_motels` (
@@ -147,10 +139,8 @@ CREATE TABLE IF NOT EXISTS `characters_motels` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 -- Volcando datos para la tabla es_extended.characters_motels: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `characters_motels` DISABLE KEYS */;
-INSERT IGNORE INTO `characters_motels` (`userIdentifier`, `motelData`) VALUES
+INSERT INTO `characters_motels` (`userIdentifier`, `motelData`) VALUES
 	('char1:f0e176ec5a87adad3df08d798b614090645a655a', '{"displayLabel":"Iker Testing","room":9,"owner":"char1:f0e176ec5a87adad3df08d798b614090645a655a","uniqueId":4654876}');
-/*!40000 ALTER TABLE `characters_motels` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.characters_storages
 CREATE TABLE IF NOT EXISTS `characters_storages` (
@@ -160,8 +150,6 @@ CREATE TABLE IF NOT EXISTS `characters_storages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci ROW_FORMAT=DYNAMIC;
 
 -- Volcando datos para la tabla es_extended.characters_storages: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `characters_storages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `characters_storages` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.datastore
 CREATE TABLE IF NOT EXISTS `datastore` (
@@ -172,8 +160,7 @@ CREATE TABLE IF NOT EXISTS `datastore` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.datastore: ~9 rows (aproximadamente)
-/*!40000 ALTER TABLE `datastore` DISABLE KEYS */;
-INSERT IGNORE INTO `datastore` (`name`, `label`, `shared`) VALUES
+INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('property', 'Property', 0),
 	('society_ambulance', 'EMS', 1),
 	('society_mechanic', 'Mechanic', 1),
@@ -183,7 +170,6 @@ INSERT IGNORE INTO `datastore` (`name`, `label`, `shared`) VALUES
 	('user_glasses', 'Glasses', 0),
 	('user_helmet', 'Helmet', 0),
 	('user_mask', 'Mask', 0);
-/*!40000 ALTER TABLE `datastore` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.datastore_data
 CREATE TABLE IF NOT EXISTS `datastore_data` (
@@ -194,11 +180,10 @@ CREATE TABLE IF NOT EXISTS `datastore_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
   KEY `index_datastore_data_name` (`name`)
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=125 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Volcando datos para la tabla es_extended.datastore_data: ~76 rows (aproximadamente)
-/*!40000 ALTER TABLE `datastore_data` DISABLE KEYS */;
-INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
+-- Volcando datos para la tabla es_extended.datastore_data: ~98 rows (aproximadamente)
+INSERT INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(1, 'society_police', NULL, '{}'),
 	(2, 'society_ambulance', NULL, '{}'),
 	(3, 'society_mechanic', NULL, '{}'),
@@ -277,8 +262,52 @@ INSERT IGNORE INTO `datastore_data` (`id`, `name`, `owner`, `data`) VALUES
 	(76, 'property', NULL, '{}'),
 	(77, 'property', NULL, '{}'),
 	(78, 'property', NULL, '{}'),
-	(79, 'property', NULL, '{}');
-/*!40000 ALTER TABLE `datastore_data` ENABLE KEYS */;
+	(79, 'property', NULL, '{}'),
+	(80, 'property', NULL, '{}'),
+	(81, 'property', NULL, '{}'),
+	(82, 'property', NULL, '{}'),
+	(83, 'property', NULL, '{}'),
+	(84, 'property', NULL, '{}'),
+	(85, 'property', NULL, '{}'),
+	(86, 'property', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{}'),
+	(87, 'user_helmet', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{}'),
+	(88, 'user_ears', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{}'),
+	(89, 'user_glasses', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{}'),
+	(90, 'user_mask', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{}'),
+	(91, 'property', NULL, '{}'),
+	(92, 'property', NULL, '{}'),
+	(93, 'property', NULL, '{}'),
+	(94, 'property', NULL, '{}'),
+	(95, 'property', NULL, '{}'),
+	(96, 'property', NULL, '{}'),
+	(97, 'property', NULL, '{}'),
+	(98, 'property', NULL, '{}'),
+	(99, 'property', NULL, '{}'),
+	(100, 'property', NULL, '{}'),
+	(101, 'property', NULL, '{}'),
+	(102, 'property', NULL, '{}'),
+	(103, 'property', NULL, '{}'),
+	(104, 'property', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', '{}'),
+	(105, 'user_glasses', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', '{}'),
+	(106, 'user_ears', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', '{}'),
+	(107, 'user_mask', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', '{}'),
+	(108, 'user_helmet', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', '{}'),
+	(109, 'property', NULL, '{}'),
+	(110, 'property', NULL, '{}'),
+	(111, 'property', NULL, '{}'),
+	(112, 'property', NULL, '{}'),
+	(113, 'property', NULL, '{}'),
+	(114, 'property', NULL, '{}'),
+	(115, 'property', NULL, '{}'),
+	(116, 'property', NULL, '{}'),
+	(117, 'property', NULL, '{}'),
+	(118, 'property', NULL, '{}'),
+	(119, 'property', NULL, '{}'),
+	(120, 'property', NULL, '{}'),
+	(121, 'property', NULL, '{}'),
+	(122, 'property', NULL, '{}'),
+	(123, 'property', NULL, '{}'),
+	(124, 'property', NULL, '{}');
 
 -- Volcando estructura para tabla es_extended.fine_types
 CREATE TABLE IF NOT EXISTS `fine_types` (
@@ -290,8 +319,7 @@ CREATE TABLE IF NOT EXISTS `fine_types` (
 ) ENGINE=InnoDB AUTO_INCREMENT=53 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.fine_types: ~52 rows (aproximadamente)
-/*!40000 ALTER TABLE `fine_types` DISABLE KEYS */;
-INSERT IGNORE INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
+INSERT INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(1, 'Misuse of a horn', 30, 0),
 	(2, 'Illegally Crossing a continuous Line', 40, 0),
 	(3, 'Driving on the wrong side of the road', 250, 0),
@@ -344,7 +372,28 @@ INSERT IGNORE INTO `fine_types` (`id`, `label`, `amount`, `category`) VALUES
 	(50, 'Murder of an LEO', 30000, 3),
 	(51, 'Involuntary manslaughter', 1800, 3),
 	(52, 'Fraud', 2000, 2);
-/*!40000 ALTER TABLE `fine_types` ENABLE KEYS */;
+
+-- Volcando estructura para tabla es_extended.garagekeys
+CREATE TABLE IF NOT EXISTS `garagekeys` (
+  `identifier` varchar(46) NOT NULL,
+  `keys` longtext DEFAULT NULL,
+  PRIMARY KEY (`identifier`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla es_extended.garagekeys: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla es_extended.impound_garage
+CREATE TABLE IF NOT EXISTS `impound_garage` (
+  `garage` varchar(64) NOT NULL DEFAULT '',
+  `data` longtext DEFAULT NULL,
+  PRIMARY KEY (`garage`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla es_extended.impound_garage: ~2 rows (aproximadamente)
+INSERT INTO `impound_garage` (`garage`, `data`) VALUES
+	('impound_davis', '[]'),
+	('impound_mrpd', '[]'),
+	('impound_vespucci', '[]');
 
 -- Volcando estructura para tabla es_extended.items
 CREATE TABLE IF NOT EXISTS `items` (
@@ -356,10 +405,10 @@ CREATE TABLE IF NOT EXISTS `items` (
   PRIMARY KEY (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Volcando datos para la tabla es_extended.items: ~36 rows (aproximadamente)
-/*!40000 ALTER TABLE `items` DISABLE KEYS */;
-INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
+-- Volcando datos para la tabla es_extended.items: ~42 rows (aproximadamente)
+INSERT INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VALUES
 	('alive_chicken', 'Pollo Vivo', 1, 0, 1),
+	('anchovy', 'Anchovy', 20, 0, 1),
 	('bandage', 'Vendaje', 2, 0, 1),
 	('blowpipe', 'Blowtorch', 2, 0, 1),
 	('bread', 'Pan Bimbo', 1, 0, 1),
@@ -374,6 +423,8 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('essence', 'Gas', 1, 0, 1),
 	('fabric', 'Fabric', 1, 0, 1),
 	('fish', 'Pescado', 1, 0, 1),
+	('fishbait', 'Fish Bait', 20, 0, 1),
+	('fishingrod', 'Fishing Rod', 20, 0, 1),
 	('fixkit', 'Kit Reparación', 3, 0, 1),
 	('fixtool', 'Kit Reparacion', 2, 0, 1),
 	('gazbottle', 'Gas Bottle', 2, 0, 1),
@@ -388,14 +439,16 @@ INSERT IGNORE INTO `items` (`name`, `label`, `weight`, `rare`, `can_remove`) VAL
 	('phone', 'Telefono', 1, 0, 1),
 	('pickaxe', 'Pico de Mineria', 2, 0, 1),
 	('radio', 'Radio', 1, 0, 1),
+	('salmon', 'Salmon', 20, 0, 1),
 	('slaughtered_chicken', 'Slaughtered chicken', 1, 0, 1),
 	('steel', 'Metal', 10, 0, 1),
 	('stone', 'Piedra', 1, 0, 1),
+	('trout', 'Trout', 20, 0, 1),
+	('tuna', 'Tuna', 40, 0, 1),
 	('washed_stone', 'Washed stone', 1, 0, 1),
 	('water', 'Water', 1, 0, 1),
 	('wood', 'Wood', 1, 0, 1),
 	('wool', 'Wool', 1, 0, 1);
-/*!40000 ALTER TABLE `items` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.jobs
 CREATE TABLE IF NOT EXISTS `jobs` (
@@ -406,14 +459,12 @@ CREATE TABLE IF NOT EXISTS `jobs` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.jobs: ~5 rows (aproximadamente)
-/*!40000 ALTER TABLE `jobs` DISABLE KEYS */;
-INSERT IGNORE INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
+INSERT INTO `jobs` (`name`, `label`, `whitelisted`) VALUES
 	('ambulance', 'Medico', 1),
 	('mechanic', 'Mecanico', 1),
 	('police', 'LSPD', 1),
 	('taxi', 'Taxista', 0),
 	('unemployed', 'Desemplado', 0);
-/*!40000 ALTER TABLE `jobs` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.job_grades
 CREATE TABLE IF NOT EXISTS `job_grades` (
@@ -429,8 +480,7 @@ CREATE TABLE IF NOT EXISTS `job_grades` (
 ) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.job_grades: ~25 rows (aproximadamente)
-/*!40000 ALTER TABLE `job_grades` DISABLE KEYS */;
-INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
+INSERT INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `salary`, `skin_male`, `skin_female`) VALUES
 	(1, 'unemployed', 0, 'Desempleado', 'En Paro', 200, '{}', '{}'),
 	(2, 'police', 0, 'Recluta', 'Recluta', 400, '{"tshirt_2":1,"hair_color_1":5,"glasses_2":3,"shoes":25,"torso_2":0,"hair_color_2":0,"pants_1":25,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":59,"helmet_1":46,"helmet_2":0,"arms":41,"face":19,"decals_1":0,"torso_1":55,"hair_2":0,"skin":34,"pants_2":0}', '{"tshirt_2":1,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":48,"shoes":27,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":0,"tshirt_1":36,"pants_1":34,"helmet_1":45,"torso_2":0,"arms":44,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
 	(3, 'police', 1, 'Oficial', 'Oficial', 600, '{"tshirt_2":1,"hair_color_1":5,"glasses_2":3,"shoes":25,"torso_2":0,"hair_color_2":0,"pants_1":25,"glasses_1":4,"hair_1":2,"sex":0,"decals_2":0,"tshirt_1":59,"helmet_1":46,"helmet_2":0,"arms":41,"face":19,"decals_1":0,"torso_1":55,"hair_2":0,"skin":34,"pants_2":0}', '{"tshirt_2":1,"decals_2":0,"glasses":0,"hair_1":2,"torso_1":48,"shoes":27,"hair_color_2":0,"glasses_1":19,"skin":13,"face":6,"pants_2":0,"tshirt_1":36,"pants_1":34,"helmet_1":45,"torso_2":0,"arms":44,"sex":1,"glasses_2":0,"decals_1":0,"hair_2":0,"helmet_2":0,"hair_color_1":0}'),
@@ -456,7 +506,22 @@ INSERT IGNORE INTO `job_grades` (`id`, `job_name`, `grade`, `name`, `label`, `sa
 	(43, 'police', 2, 'sergeant', 'Sergent', 60, '{}', '{}'),
 	(44, 'police', 3, 'lieutenant', 'Lieutenant', 85, '{}', '{}'),
 	(45, 'police', 4, 'boss', 'Commandant', 100, '{}', '{}');
-/*!40000 ALTER TABLE `job_grades` ENABLE KEYS */;
+
+-- Volcando estructura para tabla es_extended.ks_peds
+CREATE TABLE IF NOT EXISTS `ks_peds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `identifier` varchar(46) DEFAULT NULL,
+  `ped` varchar(255) DEFAULT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `label` varchar(255) DEFAULT NULL,
+  KEY `Índice 1` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=34 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+-- Volcando datos para la tabla es_extended.ks_peds: ~2 rows (aproximadamente)
+INSERT INTO `ks_peds` (`id`, `identifier`, `ped`, `type`, `name`, `label`) VALUES
+	(32, 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'u_m_y_abner', 'ped', NULL, 'human'),
+	(33, 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'a_c_boar', 'animal', NULL, 'pig');
 
 -- Volcando estructura para tabla es_extended.licenses
 CREATE TABLE IF NOT EXISTS `licenses` (
@@ -466,14 +531,12 @@ CREATE TABLE IF NOT EXISTS `licenses` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.licenses: ~5 rows (aproximadamente)
-/*!40000 ALTER TABLE `licenses` DISABLE KEYS */;
-INSERT IGNORE INTO `licenses` (`type`, `label`) VALUES
+INSERT INTO `licenses` (`type`, `label`) VALUES
 	('dmv', 'Licencia B'),
 	('drive', 'Licencia Conducir'),
 	('drive_bike', 'Licencia Motocicleta'),
 	('drive_truck', 'Licencia Camión'),
 	('weed_processing', 'Licencia CBD');
-/*!40000 ALTER TABLE `licenses` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.multicharacter_slots
 CREATE TABLE IF NOT EXISTS `multicharacter_slots` (
@@ -484,8 +547,6 @@ CREATE TABLE IF NOT EXISTS `multicharacter_slots` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.multicharacter_slots: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `multicharacter_slots` DISABLE KEYS */;
-/*!40000 ALTER TABLE `multicharacter_slots` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_calls
 CREATE TABLE IF NOT EXISTS `npwd_calls` (
@@ -501,8 +562,6 @@ CREATE TABLE IF NOT EXISTS `npwd_calls` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_calls: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_calls` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_calls` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_darkchat_channels
 CREATE TABLE IF NOT EXISTS `npwd_darkchat_channels` (
@@ -514,8 +573,6 @@ CREATE TABLE IF NOT EXISTS `npwd_darkchat_channels` (
 ) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_darkchat_channels: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_darkchat_channels` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_darkchat_channels` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_darkchat_channel_members
 CREATE TABLE IF NOT EXISTS `npwd_darkchat_channel_members` (
@@ -527,8 +584,6 @@ CREATE TABLE IF NOT EXISTS `npwd_darkchat_channel_members` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_darkchat_channel_members: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_darkchat_channel_members` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_darkchat_channel_members` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_darkchat_messages
 CREATE TABLE IF NOT EXISTS `npwd_darkchat_messages` (
@@ -544,8 +599,6 @@ CREATE TABLE IF NOT EXISTS `npwd_darkchat_messages` (
 ) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_darkchat_messages: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_darkchat_messages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_darkchat_messages` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_marketplace_listings
 CREATE TABLE IF NOT EXISTS `npwd_marketplace_listings` (
@@ -565,8 +618,6 @@ CREATE TABLE IF NOT EXISTS `npwd_marketplace_listings` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_marketplace_listings: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_marketplace_listings` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_marketplace_listings` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_match_profiles
 CREATE TABLE IF NOT EXISTS `npwd_match_profiles` (
@@ -583,14 +634,14 @@ CREATE TABLE IF NOT EXISTS `npwd_match_profiles` (
   `updatedAt` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `identifier_UNIQUE` (`identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_match_profiles: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_match_profiles` DISABLE KEYS */;
-INSERT IGNORE INTO `npwd_match_profiles` (`id`, `identifier`, `name`, `image`, `bio`, `location`, `job`, `tags`, `voiceMessage`, `createdAt`, `updatedAt`) VALUES
-	(1, 'f0e176ec5a87adad3df08d798b614090645a655a', '8375915586', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-22 10:24:06', '2022-11-22 10:24:06'),
-	(2, 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'Iker Testing', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-22 10:30:21', '2022-11-22 10:30:21');
-/*!40000 ALTER TABLE `npwd_match_profiles` ENABLE KEYS */;
+INSERT INTO `npwd_match_profiles` (`id`, `identifier`, `name`, `image`, `bio`, `location`, `job`, `tags`, `voiceMessage`, `createdAt`, `updatedAt`) VALUES
+	(1, 'f0e176ec5a87adad3df08d798b614090645a655a', '8375915586', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-22 09:24:06', '2022-11-22 09:24:06'),
+	(2, 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'Iker Testing', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-22 09:30:21', '2022-11-22 09:30:21'),
+	(3, 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', 'Mason Rogers', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-25 14:23:42', '2022-11-25 14:23:42'),
+	(4, 'char1:9460f7721e8516636a62801744f6daccdeb32db7', 'Tocando Huevos', 'https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg', '', '', '', '', NULL, '2022-11-28 19:30:34', '2022-11-28 19:30:34');
 
 -- Volcando estructura para tabla es_extended.npwd_match_views
 CREATE TABLE IF NOT EXISTS `npwd_match_views` (
@@ -607,8 +658,6 @@ CREATE TABLE IF NOT EXISTS `npwd_match_views` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_match_views: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_match_views` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_match_views` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_messages
 CREATE TABLE IF NOT EXISTS `npwd_messages` (
@@ -628,8 +677,6 @@ CREATE TABLE IF NOT EXISTS `npwd_messages` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_messages: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_messages` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_messages` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_messages_conversations
 CREATE TABLE IF NOT EXISTS `npwd_messages_conversations` (
@@ -644,8 +691,6 @@ CREATE TABLE IF NOT EXISTS `npwd_messages_conversations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_messages_conversations: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_messages_conversations` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_messages_conversations` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_messages_participants
 CREATE TABLE IF NOT EXISTS `npwd_messages_participants` (
@@ -659,8 +704,6 @@ CREATE TABLE IF NOT EXISTS `npwd_messages_participants` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_messages_participants: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_messages_participants` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_messages_participants` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_notes
 CREATE TABLE IF NOT EXISTS `npwd_notes` (
@@ -673,8 +716,6 @@ CREATE TABLE IF NOT EXISTS `npwd_notes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_notes: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_notes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_notes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_phone_contacts
 CREATE TABLE IF NOT EXISTS `npwd_phone_contacts` (
@@ -688,8 +729,6 @@ CREATE TABLE IF NOT EXISTS `npwd_phone_contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_phone_contacts: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_phone_contacts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_phone_contacts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_phone_gallery
 CREATE TABLE IF NOT EXISTS `npwd_phone_gallery` (
@@ -701,8 +740,6 @@ CREATE TABLE IF NOT EXISTS `npwd_phone_gallery` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_phone_gallery: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_phone_gallery` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_phone_gallery` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_twitter_likes
 CREATE TABLE IF NOT EXISTS `npwd_twitter_likes` (
@@ -718,8 +755,6 @@ CREATE TABLE IF NOT EXISTS `npwd_twitter_likes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_twitter_likes: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_twitter_likes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_twitter_likes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_twitter_profiles
 CREATE TABLE IF NOT EXISTS `npwd_twitter_profiles` (
@@ -732,14 +767,14 @@ CREATE TABLE IF NOT EXISTS `npwd_twitter_profiles` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `profile_name_UNIQUE` (`profile_name`),
   KEY `identifier` (`identifier`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_twitter_profiles: ~2 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_twitter_profiles` DISABLE KEYS */;
-INSERT IGNORE INTO `npwd_twitter_profiles` (`id`, `profile_name`, `identifier`, `avatar_url`, `createdAt`, `updatedAt`) VALUES
-	(1, '8375915586', 'f0e176ec5a87adad3df08d798b614090645a655a', 'https://i.file.glass/QrEvq.png', '2022-11-22 10:24:06', '2022-11-22 10:24:06'),
-	(2, 'Iker_Testing', 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'https://i.file.glass/QrEvq.png', '2022-11-22 10:30:21', '2022-11-22 10:30:21');
-/*!40000 ALTER TABLE `npwd_twitter_profiles` ENABLE KEYS */;
+INSERT INTO `npwd_twitter_profiles` (`id`, `profile_name`, `identifier`, `avatar_url`, `createdAt`, `updatedAt`) VALUES
+	(1, '8375915586', 'f0e176ec5a87adad3df08d798b614090645a655a', 'https://i.file.glass/QrEvq.png', '2022-11-22 09:24:06', '2022-11-22 09:24:06'),
+	(2, 'Iker_Testing', 'char1:f0e176ec5a87adad3df08d798b614090645a655a', 'https://i.file.glass/QrEvq.png', '2022-11-22 09:30:21', '2022-11-22 09:30:21'),
+	(3, 'Mason_Rogers', 'char1:c72291f2bfcefacb25a4c545f466189768a9b209', 'https://i.file.glass/QrEvq.png', '2022-11-25 14:23:42', '2022-11-25 14:23:42'),
+	(4, 'Tocando_Huevos', 'char1:9460f7721e8516636a62801744f6daccdeb32db7', 'https://i.file.glass/QrEvq.png', '2022-11-28 19:30:34', '2022-11-28 19:30:34');
 
 -- Volcando estructura para tabla es_extended.npwd_twitter_reports
 CREATE TABLE IF NOT EXISTS `npwd_twitter_reports` (
@@ -755,8 +790,6 @@ CREATE TABLE IF NOT EXISTS `npwd_twitter_reports` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_twitter_reports: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_twitter_reports` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_twitter_reports` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.npwd_twitter_tweets
 CREATE TABLE IF NOT EXISTS `npwd_twitter_tweets` (
@@ -776,17 +809,15 @@ CREATE TABLE IF NOT EXISTS `npwd_twitter_tweets` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.npwd_twitter_tweets: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `npwd_twitter_tweets` DISABLE KEYS */;
-/*!40000 ALTER TABLE `npwd_twitter_tweets` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.owned_vehicles
 CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `owner` varchar(46) DEFAULT NULL,
   `plate` varchar(12) NOT NULL,
   `vehicle` longtext DEFAULT NULL,
-  `type` varchar(20) NOT NULL DEFAULT 'car',
-  `job` varchar(20) DEFAULT NULL,
-  `stored` tinyint(4) NOT NULL DEFAULT 0,
+  `type` varchar(32) NOT NULL DEFAULT 'car',
+  `job` varchar(32) DEFAULT 'civ',
+  `stored` tinyint(1) NOT NULL DEFAULT 0,
   `parking` varchar(60) DEFAULT NULL,
   `pound` varchar(60) DEFAULT NULL,
   `glovebox` longtext DEFAULT NULL,
@@ -794,14 +825,15 @@ CREATE TABLE IF NOT EXISTS `owned_vehicles` (
   `garage_id` varchar(32) NOT NULL DEFAULT 'A',
   `impound` int(1) DEFAULT 0,
   `garage_type` varchar(50) DEFAULT 'car',
+  `park_coord` longtext DEFAULT NULL,
+  `isparked` int(1) DEFAULT 0,
   PRIMARY KEY (`plate`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.owned_vehicles: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `owned_vehicles` DISABLE KEYS */;
-INSERT IGNORE INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `stored`, `parking`, `pound`, `glovebox`, `trunk`, `garage_id`, `impound`, `garage_type`) VALUES
-	('char1:f0e176ec5a87adad3df08d798b614090645a655a', 'DET 870', '{"plate":"DET 870","modHorns":-1,"plateIndex":0,"neonEnabled":[false,false,false,false],"neonColor":[255,0,255],"doorsBroken":{"3":false,"0":false,"1":false,"2":false},"modTank":-1,"modDoorR":-1,"modRearBumper":-1,"modAPlate":-1,"tyreBurst":{"4":false,"0":false,"5":false,"1":false},"tankHealth":997,"modRoof":-1,"modRightFender":-1,"tyreSmokeColor":[255,255,255],"modTrimB":-1,"model":234062309,"color1":3,"modShifterLeavers":-1,"extras":[],"modHood":-1,"modArmor":-1,"modDashboard":-1,"wheelColor":156,"engineHealth":1000,"windowsBroken":{"3":true,"4":true,"5":true,"6":true,"7":true,"0":false,"1":false,"2":true},"modEngine":-1,"modSideSkirt":-1,"modFrame":-1,"modArchCover":-1,"modGrille":-1,"wheels":7,"modSuspension":-1,"modSteeringWheel":-1,"modLivery":-1,"modSmokeEnabled":false,"modStruts":-1,"modSpoilers":-1,"dirtLevel":7,"fuelLevel":65,"modTurbo":false,"modTrimA":-1,"modOrnaments":-1,"pearlescentColor":5,"modLightbar":-1,"modExhaust":-1,"modSpeakers":-1,"modFrontBumper":-1,"modTransmission":-1,"xenonColor":255,"bodyHealth":973.3,"modTrunk":-1,"modFrontWheels":-1,"modBrakes":-1,"modDial":-1,"modBackWheels":-1,"modDoorSpeaker":-1,"windowTint":-1,"modSeats":-1,"modHydrolic":-1,"modFender":-1,"modPlateHolder":-1,"color2":3,"modAerials":-1,"modXenon":false,"modEngineBlock":-1,"modAirFilter":-1,"modVanityPlate":-1}', 'car', NULL, 0, NULL, NULL, NULL, NULL, 'A', 0, 'car');
-/*!40000 ALTER TABLE `owned_vehicles` ENABLE KEYS */;
+INSERT INTO `owned_vehicles` (`owner`, `plate`, `vehicle`, `type`, `job`, `stored`, `parking`, `pound`, `glovebox`, `trunk`, `garage_id`, `impound`, `garage_type`, `park_coord`, `isparked`) VALUES
+	('char1:f0e176ec5a87adad3df08d798b614090645a655a', 'DET 870', '{"modBackWheels":-1,"modAerials":-1,"modTrimB":-1,"modFender":-1,"vehicle_window":[1,1,false,false,false,false,1,false],"rgb":[41,44,46],"tyreSmokeColor":[255,255,255],"model":234062309,"modEngineBlock":-1,"modTrunk":-1,"modSpoilers":-1,"wheel_tires":[false,false,false,false,false,false,false],"modDashboard":-1,"modSpeakers":-1,"bodyHealth":970.5,"plateIndex":0,"modHorns":-1,"modExhaust":-1,"color2":3,"modEngine":-1,"extras":[],"modSideSkirt":-1,"modAirFilter":-1,"modFrame":-1,"deformation":"[]","pearlescentColor":5,"modSmokeEnabled":false,"modDoorSpeaker":-1,"tankHealth":996.7,"dirtLevel":7.0,"modVanityPlate":-1,"neonColor":[255,0,255],"modBrakes":-1,"modHydrolic":-1,"modPlateHolder":-1,"modAPlate":-1,"wheelColor":156,"neonEnabled":[false,false,false,false],"modSuspension":-1,"modShifterLeavers":-1,"rgb2":[41,44,46],"modTurbo":false,"modDial":-1,"modArmor":-1,"modXenon":false,"fuelLevel":65.0,"modGrille":-1,"modSteeringWheel":-1,"modWindows":-1,"modFrontBumper":-1,"vehicle_doors":[false,false,false,false,false,false],"color1":3,"modRearBumper":-1,"modRightFender":-1,"modTrimA":-1,"modArchCover":-1,"modSeats":-1,"modLivery":-1,"modTransmission":-1,"engineHealth":0.0,"modOrnaments":-1,"plate":"DET 870","xenonColor":255,"modTank":-1,"modRoof":-1,"modHood":-1,"wheels":7,"windowTint":-1,"modFrontWheels":-1,"modStruts":-1}', 'car', 'civ', 1, NULL, NULL, NULL, NULL, 'A', 0, 'car', '{"z":30.36737060546875,"x":214.0523223876953,"heading":67.85287475585938,"y":-803.84619140625}', 0),
+	('char1:f0e176ec5a87adad3df08d798b614090645a655a', 'MME 747', '{"modAirFilter":-1,"color2":8,"modDoorR":-1,"plateIndex":0,"modFrame":-1,"windowTint":-1,"modHydrolic":-1,"plate":"MME 747","tankHealth":999.9,"modLightbar":-1,"modEngine":-1,"tyreSmokeColor":[255,255,255],"modEngineBlock":-1,"modTurbo":false,"modExhaust":-1,"dirtLevel":0.1,"model":-2120700196,"modRightFender":-1,"modDial":-1,"wheelColor":0,"modSmokeEnabled":false,"modSpeakers":-1,"modDoorSpeaker":-1,"modAerials":-1,"modFrontBumper":-1,"modShifterLeavers":-1,"customSecondaryColor":[51,51,51],"neonColor":[255,0,255],"color1":29,"customPrimaryColor":[107,0,0],"bodyHealth":998.8,"modBackWheels":-1,"modAPlate":-1,"doorsBroken":{"2":false,"3":false,"0":false,"1":false,"4":false},"modTransmission":-1,"modHorns":-1,"modRearBumper":-1,"modBrakes":-1,"modHood":-1,"xenonColor":255,"modStruts":-1,"modSuspension":-1,"fuelLevel":65,"modGrille":-1,"modFrontWheels":-1,"pearlescentColor":5,"tyreBurst":{"1":false,"4":false,"0":false,"5":false},"modSeats":-1,"modTrimA":-1,"modOrnaments":-1,"wheels":7,"modVanityPlate":-1,"neonEnabled":[false,false,false,false],"modSpoilers":-1,"extras":[],"modDashboard":-1,"modLivery":-1,"windowsBroken":{"2":true,"3":true,"0":false,"1":false,"6":false,"7":false,"4":true,"5":true},"modTrunk":-1,"modXenon":false,"modSteeringWheel":-1,"modTrimB":-1,"modFender":-1,"engineHealth":1000,"modSideSkirt":-1,"modPlateHolder":-1,"modArchCover":-1,"modArmor":-1,"modRoof":-1,"modTank":-1}', 'car', 'civ', 1, NULL, NULL, NULL, NULL, 'A', 0, 'car', NULL, 0);
 
 -- Volcando estructura para tabla es_extended.ox_inventory
 CREATE TABLE IF NOT EXISTS `ox_inventory` (
@@ -813,10 +845,29 @@ CREATE TABLE IF NOT EXISTS `ox_inventory` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.ox_inventory: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `ox_inventory` DISABLE KEYS */;
-INSERT IGNORE INTO `ox_inventory` (`owner`, `name`, `data`, `lastupdated`) VALUES
-	('', '2483936279', '[{"name":"ammo-9","count":588,"slot":1}]', '2022-11-23 23:15:11');
-/*!40000 ALTER TABLE `ox_inventory` ENABLE KEYS */;
+INSERT INTO `ox_inventory` (`owner`, `name`, `data`, `lastupdated`) VALUES
+	('', '2483936279', '[{"name":"ammo-9","count":588,"slot":1}]', '2022-11-23 22:15:11');
+
+-- Volcando estructura para tabla es_extended.parking_meter
+CREATE TABLE IF NOT EXISTS `parking_meter` (
+  `identifier` varchar(46) DEFAULT NULL,
+  `plate` varchar(32) DEFAULT '',
+  `vehicle` longtext DEFAULT NULL,
+  `coord` longtext DEFAULT NULL,
+  `park_coord` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla es_extended.parking_meter: ~0 rows (aproximadamente)
+
+-- Volcando estructura para tabla es_extended.private_garage
+CREATE TABLE IF NOT EXISTS `private_garage` (
+  `identifier` varchar(46) DEFAULT NULL,
+  `vehicles` longtext DEFAULT NULL,
+  `garage` varchar(64) DEFAULT NULL,
+  `inventory` longtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla es_extended.private_garage: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla es_extended.rented_vehicles
 CREATE TABLE IF NOT EXISTS `rented_vehicles` (
@@ -830,8 +881,6 @@ CREATE TABLE IF NOT EXISTS `rented_vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.rented_vehicles: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `rented_vehicles` DISABLE KEYS */;
-/*!40000 ALTER TABLE `rented_vehicles` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.society_moneywash
 CREATE TABLE IF NOT EXISTS `society_moneywash` (
@@ -843,8 +892,6 @@ CREATE TABLE IF NOT EXISTS `society_moneywash` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.society_moneywash: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `society_moneywash` DISABLE KEYS */;
-/*!40000 ALTER TABLE `society_moneywash` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.twitter_accounts
 CREATE TABLE IF NOT EXISTS `twitter_accounts` (
@@ -857,8 +904,6 @@ CREATE TABLE IF NOT EXISTS `twitter_accounts` (
 ) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Volcando datos para la tabla es_extended.twitter_accounts: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `twitter_accounts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `twitter_accounts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.twitter_likes
 CREATE TABLE IF NOT EXISTS `twitter_likes` (
@@ -873,8 +918,6 @@ CREATE TABLE IF NOT EXISTS `twitter_likes` (
 ) ENGINE=InnoDB AUTO_INCREMENT=137 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
 
 -- Volcando datos para la tabla es_extended.twitter_likes: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `twitter_likes` DISABLE KEYS */;
-/*!40000 ALTER TABLE `twitter_likes` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.twitter_tweets
 CREATE TABLE IF NOT EXISTS `twitter_tweets` (
@@ -890,8 +933,6 @@ CREATE TABLE IF NOT EXISTS `twitter_tweets` (
 ) ENGINE=InnoDB AUTO_INCREMENT=170 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Volcando datos para la tabla es_extended.twitter_tweets: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `twitter_tweets` DISABLE KEYS */;
-/*!40000 ALTER TABLE `twitter_tweets` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.users
 CREATE TABLE IF NOT EXISTS `users` (
@@ -920,13 +961,13 @@ CREATE TABLE IF NOT EXISTS `users` (
   `phone_number` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`identifier`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
--- Volcando datos para la tabla es_extended.users: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT IGNORE INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `id`, `disabled`, `last_property`, `created_at`, `last_seen`, `pincode`, `phone_number`) VALUES
-	('char1:f0e176ec5a87adad3df08d798b614090645a655a', '{"money":80985,"black_money":0,"bank":50480}', 'admin', '[{"name":"money","slot":1,"count":80985},{"name":"bag","slot":2,"metadata":{"serial":"2483936279","model":697352466,"image":"suitcase","label":"Suit Case","slots":20,"description":"Suit Case - Can store up to 20 Items","weights":20000},"count":1},{"name":"ammo-9","slot":3,"count":912}]', 'police', 1, '[]', '{"y":-815.9,"x":416.9,"heading":218.3,"z":29.2}', 'Iker', 'Legacy', '12/12/1988', 'm', 188, '{"beard_4":0,"lip_thickness":-2,"eyebrows_1":0,"watches_2":0,"decals_2":0,"cheeks_1":2,"complexion_1":0,"chest_3":0,"tshirt_1":21,"shoes_2":2,"bracelets_2":0,"chain_2":0,"nose_3":5,"bproof_2":0,"sun_1":0,"eye_squint":0,"nose_5":10,"chin_1":0,"face_md_weight":50,"blush_3":0,"lipstick_4":0,"makeup_3":0,"blemishes_1":0,"shoes_1":9,"lipstick_2":0,"bodyb_3":-1,"nose_6":0,"blush_1":0,"chest_2":0,"bodyb_2":0,"moles_2":0,"beard_2":0,"bags_1":0,"nose_4":8,"pants_2":0,"neck_thickness":0,"glasses_1":0,"tshirt_2":0,"blush_2":0,"moles_1":0,"ears_1":-1,"lipstick_3":0,"sun_2":0,"skin_md_weight":50,"eyebrows_5":0,"sex":0,"chain_1":0,"mask_2":0,"cheeks_2":-10,"ears_2":0,"jaw_1":0,"jaw_2":0,"chest_1":0,"bodyb_4":0,"helmet_2":0,"hair_color_1":61,"eyebrows_3":0,"arms":6,"pants_1":4,"arms_2":0,"hair_1":75,"chin_4":0,"makeup_4":0,"makeup_1":0,"watches_1":-1,"hair_color_2":29,"dad":0,"complexion_2":0,"bodyb_1":-1,"eyebrows_2":0,"eyebrows_4":0,"nose_1":0,"beard_3":0,"age_1":0,"mom":21,"age_2":0,"glasses_2":0,"makeup_2":0,"bags_2":0,"helmet_1":-1,"chin_2":0,"eye_color":0,"blemishes_2":0,"mask_1":0,"chin_13":0,"cheeks_3":6,"eyebrows_6":0,"chin_3":0,"decals_1":0,"hair_2":0,"bproof_1":0,"nose_2":6,"bracelets_1":-1,"torso_2":0,"lipstick_1":0,"torso_1":62,"beard_1":0}', '[{"val":0,"percent":0.0,"name":"drunk"},{"val":646500,"percent":64.64999999999999,"name":"hunger"},{"val":699150,"percent":69.915,"name":"thirst"}]', 0, 4, 0, NULL, '2022-11-22 10:59:05', '2022-11-23 23:15:11', NULL, '988-788-5755');
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+-- Volcando datos para la tabla es_extended.users: ~3 rows (aproximadamente)
+INSERT INTO `users` (`identifier`, `accounts`, `group`, `inventory`, `job`, `job_grade`, `loadout`, `position`, `firstname`, `lastname`, `dateofbirth`, `sex`, `height`, `skin`, `status`, `is_dead`, `id`, `disabled`, `last_property`, `created_at`, `last_seen`, `pincode`, `phone_number`) VALUES
+	('char1:9460f7721e8516636a62801744f6daccdeb32db7', '{"bank":50800,"black_money":0,"money":0}', 'admin', '[]', 'unemployed', 0, '[]', '{"x":-2285.0,"y":-1437.3,"z":0.2,"heading":306.1}', 'Tocando', 'Huevos', '30/05/1989', 'm', 181, '{"nose_1":0,"eyebrows_4":0,"eye_color":0,"bodyb_3":-1,"beard_2":10,"bproof_2":0,"neck_thickness":0,"nose_3":5,"moles_2":0,"nose_2":0,"chin_13":0,"makeup_4":0,"cheeks_3":6,"cheeks_1":2,"torso_1":23,"eyebrows_6":0,"eye_squint":0,"lipstick_4":0,"eyebrows_5":0,"mask_2":0,"bracelets_2":0,"pants_2":3,"chin_3":0,"blush_3":0,"lipstick_2":0,"watches_2":0,"beard_1":11,"complexion_1":0,"decals_1":0,"blush_2":0,"tshirt_2":2,"bproof_1":0,"hair_2":0,"jaw_1":0,"lipstick_3":0,"jaw_2":0,"chest_1":0,"blemishes_1":0,"shoes_2":2,"mask_1":0,"eyebrows_1":0,"bracelets_1":-1,"arms":1,"beard_4":0,"helmet_1":-1,"chest_2":0,"bodyb_4":0,"blush_1":0,"bags_1":0,"tshirt_1":4,"torso_2":2,"shoes_1":70,"bodyb_1":-1,"makeup_3":0,"sun_2":0,"glasses_1":0,"helmet_2":0,"glasses_2":0,"nose_5":10,"makeup_2":0,"decals_2":0,"chin_4":0,"hair_1":76,"cheeks_2":-10,"hair_color_2":29,"blemishes_2":0,"ears_2":0,"complexion_2":0,"nose_6":0,"skin_md_weight":50,"face_md_weight":50,"eyebrows_3":0,"bodyb_2":0,"lipstick_1":0,"chain_1":22,"hair_color_1":61,"mom":21,"eyebrows_2":0,"age_1":0,"lip_thickness":-2,"chain_2":2,"age_2":0,"arms_2":0,"nose_4":8,"pants_1":28,"bags_2":0,"ears_1":-1,"beard_3":0,"makeup_1":0,"chin_1":0,"chest_3":0,"sun_1":0,"sex":0,"moles_1":0,"watches_1":-1,"chin_2":0,"dad":0}', '[{"val":0,"name":"drunk","percent":0.0},{"val":469300,"name":"hunger","percent":46.93},{"val":476975,"name":"thirst","percent":47.6975}]', 0, 6, 0, NULL, '2022-11-28 19:30:33', '2022-11-28 19:58:09', NULL, '610-847-1972'),
+	('char1:c72291f2bfcefacb25a4c545f466189768a9b209', '{"black_money":0,"money":0,"bank":50300}', 'admin', '[]', 'police', 0, '[]', '{"y":554.3,"x":1970.0,"heading":119.1,"z":160.7}', 'Mason', 'Rogers', '19/01/1994', 'm', 180, '{"age_1":0,"pants_2":3,"nose_4":8,"blush_2":0,"chest_2":0,"beard_1":11,"bodyb_4":0,"sun_1":0,"blemishes_1":0,"blush_3":0,"complexion_2":0,"mask_1":0,"eyebrows_6":0,"beard_3":0,"tshirt_2":2,"mom":43,"decals_1":0,"cheeks_3":6,"glasses_2":0,"eyebrows_3":0,"makeup_1":0,"hair_1":76,"blemishes_2":0,"eyebrows_2":0,"beard_4":0,"bodyb_3":-1,"nose_5":10,"eyebrows_5":0,"bracelets_1":-1,"hair_color_1":61,"chain_2":2,"nose_1":-5,"dad":29,"ears_2":0,"jaw_2":0,"cheeks_1":2,"tshirt_1":4,"shoes_1":70,"eyebrows_4":0,"ears_1":-1,"neck_thickness":0,"eye_squint":0,"torso_2":2,"torso_1":23,"eyebrows_1":0,"skin_md_weight":27,"makeup_4":0,"sun_2":0,"face_md_weight":61,"nose_6":0,"makeup_3":0,"helmet_1":-1,"chin_3":0,"lipstick_4":0,"shoes_2":2,"jaw_1":0,"chin_13":0,"cheeks_2":-10,"decals_2":0,"bodyb_1":-1,"chain_1":22,"blush_1":0,"moles_1":0,"nose_3":5,"watches_1":-1,"arms":1,"helmet_2":0,"bproof_2":0,"beard_2":10,"lipstick_3":0,"lip_thickness":-2,"watches_2":0,"lipstick_2":0,"hair_2":0,"bracelets_2":0,"bodyb_2":0,"eye_color":0,"bproof_1":0,"lipstick_1":0,"pants_1":28,"chest_3":0,"moles_2":0,"glasses_1":0,"chin_4":0,"chin_2":0,"chin_1":0,"complexion_1":0,"mask_2":0,"bags_2":0,"age_2":0,"chest_1":0,"makeup_2":0,"bags_1":0,"hair_color_2":29,"arms_2":0,"sex":0,"nose_2":6}', '[{"val":0,"name":"drunk","percent":0.0},{"val":473400,"name":"hunger","percent":47.33999999999999},{"val":480050,"name":"thirst","percent":48.00499999999999}]', 0, 5, 0, NULL, '2022-11-25 14:23:41', '2022-11-25 15:09:21', NULL, '897-505-7686'),
+	('char1:f0e176ec5a87adad3df08d798b614090645a655a', '{"money":999833778,"black_money":0,"bank":56320}', 'admin', '[{"count":1,"metadata":{"durability":100,"ammo":0,"registered":"Iker Legacy","components":[],"serial":"874594XHK597993"},"slot":1,"name":"WEAPON_PISTOL"},{"count":999833778,"slot":2,"name":"money"},{"count":1,"metadata":{"durability":100,"ammo":100,"components":[]},"slot":3,"name":"WEAPON_PETROLCAN"},{"count":1,"metadata":{"description":"MME 747 Vehicle Key","label":"Entity XXR Vehicle Key","image":"keys","plate":"MME 747"},"slot":9,"name":"keys"},{"count":1,"metadata":{"description":"DET 870 Vehicle Key","label":"Reaper Vehicle Key","image":"keys","plate":"DET 870"},"slot":10,"name":"keys"}]', 'police', 2, '[]', '{"heading":25.5,"x":252.6,"y":-1257.4,"z":29.1}', 'Iker', 'Legacy', '12/12/1988', 'm', 188, '{"beard_4":0,"lip_thickness":-2,"eyebrows_1":0,"watches_2":0,"decals_2":0,"cheeks_1":2,"complexion_1":0,"chest_3":0,"tshirt_1":21,"shoes_2":2,"bracelets_2":0,"chain_2":0,"nose_3":5,"bproof_2":0,"sun_1":0,"eye_squint":0,"nose_5":10,"chin_1":0,"face_md_weight":50,"blush_3":0,"lipstick_4":0,"makeup_3":0,"blemishes_1":0,"shoes_1":9,"lipstick_2":0,"bodyb_3":-1,"nose_6":0,"blush_1":0,"chest_2":0,"bodyb_2":0,"moles_2":0,"beard_2":0,"bags_1":0,"nose_4":8,"pants_2":0,"neck_thickness":0,"glasses_1":0,"tshirt_2":0,"blush_2":0,"moles_1":0,"ears_1":-1,"lipstick_3":0,"sun_2":0,"skin_md_weight":50,"eyebrows_5":0,"sex":0,"chain_1":0,"mask_2":0,"cheeks_2":-10,"ears_2":0,"jaw_1":0,"jaw_2":0,"chest_1":0,"bodyb_4":0,"helmet_2":0,"hair_color_1":61,"eyebrows_3":0,"arms":6,"pants_1":4,"arms_2":0,"hair_1":75,"chin_4":0,"makeup_4":0,"makeup_1":0,"watches_1":-1,"hair_color_2":29,"dad":0,"complexion_2":0,"bodyb_1":-1,"eyebrows_2":0,"eyebrows_4":0,"nose_1":0,"beard_3":0,"age_1":0,"mom":21,"age_2":0,"glasses_2":0,"makeup_2":0,"bags_2":0,"helmet_1":-1,"chin_2":0,"eye_color":0,"blemishes_2":0,"mask_1":0,"chin_13":0,"cheeks_3":6,"eyebrows_6":0,"chin_3":0,"decals_1":0,"hair_2":0,"bproof_1":0,"nose_2":6,"bracelets_1":-1,"torso_2":0,"lipstick_1":0,"torso_1":62,"beard_1":0}', '[{"name":"drunk","percent":0.0,"val":0},{"name":"hunger","percent":96.28999999999999,"val":962900},{"name":"thirst","percent":97.2175,"val":972175}]', 0, 4, 0, NULL, '2022-11-22 09:59:05', '2022-12-12 12:31:13', NULL, '988-788-5755');
 
 -- Volcando estructura para tabla es_extended.user_contacts
 CREATE TABLE IF NOT EXISTS `user_contacts` (
@@ -939,8 +980,6 @@ CREATE TABLE IF NOT EXISTS `user_contacts` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.user_contacts: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `user_contacts` DISABLE KEYS */;
-/*!40000 ALTER TABLE `user_contacts` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.user_licenses
 CREATE TABLE IF NOT EXISTS `user_licenses` (
@@ -951,10 +990,17 @@ CREATE TABLE IF NOT EXISTS `user_licenses` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.user_licenses: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `user_licenses` DISABLE KEYS */;
-INSERT IGNORE INTO `user_licenses` (`id`, `type`, `owner`) VALUES
+INSERT INTO `user_licenses` (`id`, `type`, `owner`) VALUES
 	(1, 'weapon', 'char1:f0e176ec5a87adad3df08d798b614090645a655a');
-/*!40000 ALTER TABLE `user_licenses` ENABLE KEYS */;
+
+-- Volcando estructura para tabla es_extended.vehiclekeys
+CREATE TABLE IF NOT EXISTS `vehiclekeys` (
+  `plate` varchar(64) NOT NULL DEFAULT '',
+  `keys` longtext DEFAULT NULL,
+  PRIMARY KEY (`plate`) USING BTREE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- Volcando datos para la tabla es_extended.vehiclekeys: ~0 rows (aproximadamente)
 
 -- Volcando estructura para tabla es_extended.vehicles
 CREATE TABLE IF NOT EXISTS `vehicles` (
@@ -965,8 +1011,7 @@ CREATE TABLE IF NOT EXISTS `vehicles` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.vehicles: ~240 rows (aproximadamente)
-/*!40000 ALTER TABLE `vehicles` DISABLE KEYS */;
-INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
+INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Adder', 'adder', 900000, 'super'),
 	('Akuma', 'AKUMA', 7500, 'motorcycles'),
 	('Alpha', 'alpha', 60000, 'sports'),
@@ -1207,7 +1252,6 @@ INSERT IGNORE INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
 	('Zombie', 'zombiea', 9500, 'motorcycles'),
 	('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
 	('Z-Type', 'ztype', 220000, 'sportsclassics');
-/*!40000 ALTER TABLE `vehicles` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.vehicle_categories
 CREATE TABLE IF NOT EXISTS `vehicle_categories` (
@@ -1217,8 +1261,7 @@ CREATE TABLE IF NOT EXISTS `vehicle_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.vehicle_categories: ~11 rows (aproximadamente)
-/*!40000 ALTER TABLE `vehicle_categories` DISABLE KEYS */;
-INSERT IGNORE INTO `vehicle_categories` (`name`, `label`) VALUES
+INSERT INTO `vehicle_categories` (`name`, `label`) VALUES
 	('compacts', 'Compacts'),
 	('coupes', 'Coupés'),
 	('motorcycles', 'Motos'),
@@ -1230,7 +1273,6 @@ INSERT IGNORE INTO `vehicle_categories` (`name`, `label`) VALUES
 	('super', 'Super'),
 	('suvs', 'SUVs'),
 	('vans', 'Vans');
-/*!40000 ALTER TABLE `vehicle_categories` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.vehicle_sold
 CREATE TABLE IF NOT EXISTS `vehicle_sold` (
@@ -1243,8 +1285,6 @@ CREATE TABLE IF NOT EXISTS `vehicle_sold` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.vehicle_sold: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `vehicle_sold` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vehicle_sold` ENABLE KEYS */;
 
 -- Volcando estructura para tabla es_extended.whitelist
 CREATE TABLE IF NOT EXISTS `whitelist` (
@@ -1253,9 +1293,8 @@ CREATE TABLE IF NOT EXISTS `whitelist` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 -- Volcando datos para la tabla es_extended.whitelist: ~0 rows (aproximadamente)
-/*!40000 ALTER TABLE `whitelist` DISABLE KEYS */;
-/*!40000 ALTER TABLE `whitelist` ENABLE KEYS */;
 
+/*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IFNULL(@OLD_FOREIGN_KEY_CHECKS, 1) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

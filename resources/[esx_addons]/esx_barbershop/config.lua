@@ -7,7 +7,7 @@ Config.MarkerSize   = vector3(1.5, 1.5, 1.0)
 Config.MarkerColor  = {r = 102, g = 102, b = 204}
 Config.MarkerType   = 23
 
-Config.Locale = GetConvar('esx:locale', 'es')
+Config.Locale = GetConvar('esx:locale', 'en')
 
 Config.Shops = {
 	vector3(-814.3, -183.8, 36.6),

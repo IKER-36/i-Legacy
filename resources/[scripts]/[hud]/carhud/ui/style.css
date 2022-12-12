@@ -1,0 +1,94 @@
+@font-face {
+    font-family: Boxed;
+    src: url(./LANENAR_.ttf);
+}
+
+.container{
+    position: absolute;
+    left: 22%;
+    bottom: 8%;
+    transform: translateX(-50%);
+    width: 8vw;
+    height: 4vw;
+    background-color: none;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+}
+#rectangulo {
+
+   
+    height: 20px;
+  width: 53.5px;
+  background-color: white;
+  border-radius: .3vw;
+  margin-left: 305%;
+  margin-top: 71%;
+  font-size: 0.8vw;
+  filter: brightness(100%);
+ 
+  
+  font-size: 1.7vh;
+  font-family: Boxed;
+  font-weight: 700;
+  transition-timing-function: linear;
+    transition-duration: 5s;
+}
+#velocidad{
+    position: absolute;
+    font-family: Boxed;
+    font-size: 2.7vw;
+    color:white;
+    text-shadow: 1px 2px 2px black;
+    left: 347%;
+    bottom: -81%;
+    font-weight: 700;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+   
+}
+
+#gasolina-icon{
+    position: absolute;
+    color: rgb(0, 0, 0);
+    font-size: 0.7vw;
+   
+    left: 306.2%;
+    bottom: -65.1%;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+}
+#L {
+    position: absolute;
+    margin-left: 332%;
+    margin-top: -12%;
+    font-family: Boxed;
+    color: rgb(0, 0, 0);
+    font-size: 1.4vh;
+    font-weight: 700;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+
+}
+#gasolina{
+    position: absolute;
+    font-family: Boxed;
+    font-size: 0.8vw;
+    color: black;
+    font-weight: 700;
+    left: 313.6%;
+    bottom: -68%;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+}
+
+#km{
+    position: absolute;
+    font-family: Boxed;
+    font-size: 0.8vw;
+    color: white;
+    text-shadow: 1px 2px 1px black;
+    left: 404%;
+    bottom: -73%;
+    transition-timing-function: linear;
+    transition-duration: 5s;
+}

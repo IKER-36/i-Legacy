@@ -1,4 +1,5 @@
 $(function(){
+    console.log("Name --> J-NEONUI\nAuthor --> Jaareet#0097\nScript -->")
     $("body").css({"overflow":"hidden"})
     // AddEventListener
     window.addEventListener("message", function(event){

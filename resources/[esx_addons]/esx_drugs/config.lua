@@ -1,6 +1,6 @@
 Config = {}
 
-Config.Locale = GetConvar('esx:locale', 'es')
+Config.Locale = GetConvar('esx:locale', 'en')
 
 Config.Delays = {
 	WeedProcessing = 1000 * 7
