@@ -10,14 +10,12 @@
 
 return {
 	General = {
-		name = 'Tiendas de Alimentación',
+		name = 'Shop',
 		blip = {
-			id = 59, colour = 60, scale = 0.8
+			id = 59, colour = 69, scale = 0.8
 		}, inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
-			{ name = 'fishingrod', price = 250 },
-			{ name = 'fishbait', price = 3 },
 			{ name = 'cola', price = 10 },
 		}, locations = {
 			vec3(25.7, -1347.3, 29.49),
@@ -45,15 +43,13 @@ return {
 	},
 
 	Liquor = {
-		name = 'Licorería',
+		name = 'Liquor Store',
 		blip = {
-			id = 93, colour = 48, scale = 0.8
+			id = 93, colour = 69, scale = 0.8
 		}, inventory = {
-			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
-			{ name = 'fishingrod', price = 250 },
-			{ name = 'fishbait', price = 3 },
 			{ name = 'cola', price = 10 },
+			{ name = 'burger', price = 15 },
 		}, locations = {
 			vec3(1135.808, -982.281, 46.415),
 			vec3(-1222.915, -906.983, 12.326),
@@ -73,7 +69,7 @@ return {
 	},
 
 	YouTool = {
-		name = 'Ferreteria',
+		name = 'YouTool',
 		blip = {
 			id = 402, colour = 69, scale = 0.8
 		}, inventory = {
@@ -87,12 +83,11 @@ return {
 	},
 
 	Ammunation = {
-		name = 'Armerías Ammunation',
+		name = 'Ammunation',
 		blip = {
 			id = 110, colour = 69, scale = 0.8
 		}, inventory = {
-			{ name = 'ammo-9', price = 3, },
-			{ name = 'WEAPON_SWITCHBLADE', price = 3, },
+			{ name = 'ammo-9', price = 5, },
 			{ name = 'WEAPON_KNIFE', price = 200 },
 			{ name = 'WEAPON_BAT', price = 100 },
 			{ name = 'WEAPON_PISTOL', price = 1000, metadata = { registered = true }, license = 'weapon' }
@@ -133,22 +128,22 @@ return {
 			{ name = 'WEAPON_CARBINERIFLE', price = 1000, metadata = { registered = true, serial = 'POL' }, license = 'weapon', grade = 3 },
 			{ name = 'WEAPON_STUNGUN', price = 500, metadata = { registered = true, serial = 'POL'} }
 		}, locations = {
-			vector3(481.8985, -996.7471, 30.68967)
+			vec3(451.51, -979.44, 30.68)
 		}, targets = {
-			{ loc = vector3(481.8985, -996.7471, 29.68967), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
+			{ loc = vec3(453.21, -980.03, 30.68), length = 0.5, width = 3.0, heading = 270.0, minZ = 30.5, maxZ = 32.0, distance = 6 }
 		}
 	},
 
 	Medicine = {
-		name = 'Armario Medico',
+		name = 'Medicine Cabinet',
 		groups = {
 			['ambulance'] = 0
 		},
 		blip = {
 			id = 403, colour = 69, scale = 0.8
 		}, inventory = {
-			{ name = 'medikit', price = 0 },
-			{ name = 'bandage', price = 0 }
+			{ name = 'medikit', price = 26 },
+			{ name = 'bandage', price = 5 }
 		}, locations = {
 			vec3(306.3687, -601.5139, 43.28406)
 		}, targets = {
