@@ -32,7 +32,8 @@ return {
 	},
 
 	['bandage'] = {
-		label = 'Bandage',
+		label = 'Vendaje',
+		-- label = 'Bandage',
 		weight = 115,
 		client = {
 			anim = { dict = 'missheistdockssetup1clipboard@idle_a', clip = 'idle_a', flag = 49 },
@@ -42,36 +43,46 @@ return {
 		}
 	},
 
+	['bag'] = {
+		label = 'Mochila',
+		-- label = 'Bag',
+		weight = 0,
+		stack = false,
+		close = true,
+		description = ''
+	},
+
 	['black_money'] = {
-		label = 'Dirty Money',
+		label = 'Dinero Negro',
+		-- label = 'Dirty Money',
 	},
 
 	['burger'] = {
-		label = 'Burger',
+		label = 'Hamburguesa',
 		weight = 220,
 		client = {
 			status = { hunger = 200000 },
 			anim = 'eating',
 			prop = 'burger',
 			usetime = 2500,
-			notification = 'You ate a delicious burger'
+			notification = 'Te comiste una hamburguesa, vigila la dieta...'
 		},
 	},
 
 	['cola'] = {
-		label = 'eCola',
+		label = 'Coca-Cola',
 		weight = 350,
 		client = {
 			status = { thirst = 200000 },
 			anim = { dict = 'mp_player_intdrink', clip = 'loop_bottle' },
 			prop = { model = `prop_ecola_can`, pos = vec3(0.01, 0.01, 0.06), rot = vec3(5.0, 5.0, -180.5) },
 			usetime = 2500,
-			notification = 'You quenched your thirst with cola'
+			notification = 'Apagaste tu sed con cola'
 		}
 	},
 
 	['parachute'] = {
-		label = 'Parachute',
+		label = 'Paracaidas',
 		weight = 8000,
 		stack = false,
 		client = {
@@ -81,11 +92,11 @@ return {
 	},
 
 	['garbage'] = {
-		label = 'Garbage',
+		label = 'Basura',
 	},
 
 	['paperbag'] = {
-		label = 'Paper Bag',
+		label = 'Bolsa de Papel',
 		weight = 1,
 		stack = false,
 		close = false,
@@ -109,12 +120,12 @@ return {
 	},
 
 	['lockpick'] = {
-		label = 'Lockpick',
+		label = 'Ganzúa',
 		weight = 160,
 	},
 
 	['phone'] = {
-		label = 'Phone',
+		label = 'iPhone',
 		weight = 190,
 		stack = false,
 		consume = 0,
@@ -134,7 +145,7 @@ return {
 	},
 
 	['money'] = {
-		label = 'Money',
+		label = 'Dinero',
 	},
 
 	['mustard'] = {
@@ -150,7 +161,7 @@ return {
 	},
 
 	['water'] = {
-		label = 'Water',
+		label = 'Agua',
 		weight = 500,
 		client = {
 			status = { thirst = 200000 },
@@ -198,14 +209,6 @@ return {
 	['alive_chicken'] = {
 		label = 'Pollo Vivo',
 		weight = 1,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
-	['anchovy'] = {
-		label = 'Anchovy',
-		weight = 20,
 		stack = true,
 		close = true,
 		description = nil
@@ -315,22 +318,6 @@ return {
 		description = nil
 	},
 
-	['fishbait'] = {
-		label = 'Fish Bait',
-		weight = 20,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
-	['fishingrod'] = {
-		label = 'Fishing Rod',
-		weight = 20,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
 	['fixkit'] = {
 		label = 'Kit Reparación',
 		weight = 3,
@@ -427,14 +414,6 @@ return {
 		description = nil
 	},
 
-	['salmon'] = {
-		label = 'Salmon',
-		weight = 20,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
 	['slaughtered_chicken'] = {
 		label = 'Slaughtered chicken',
 		weight = 1,
@@ -459,22 +438,6 @@ return {
 		description = nil
 	},
 
-	['trout'] = {
-		label = 'Trout',
-		weight = 20,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
-	['tuna'] = {
-		label = 'Tuna',
-		weight = 40,
-		stack = true,
-		close = true,
-		description = nil
-	},
-
 	['washed_stone'] = {
 		label = 'Washed stone',
 		weight = 1,
@@ -494,6 +457,62 @@ return {
 	['wool'] = {
 		label = 'Wool',
 		weight = 1,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['anchovy'] = {
+		label = 'Anchovy',
+		weight = 20,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['fishbait'] = {
+		label = 'Fish Bait',
+		weight = 20,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['keys'] = {
+		label = 'Vehicle Key',
+		weight = 0,
+		stack = false,
+		close = true,
+		description = 'Vehicle Key'
+	},
+
+	['fishingrod'] = {
+		label = 'Fishing Rod',
+		weight = 20,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['salmon'] = {
+		label = 'Salmon',
+		weight = 20,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['tuna'] = {
+		label = 'Tuna',
+		weight = 40,
+		stack = true,
+		close = true,
+		description = nil
+	},
+
+	['trout'] = {
+		label = 'Trout',
+		weight = 20,
 		stack = true,
 		close = true,
 		description = nil
