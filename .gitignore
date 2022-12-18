@@ -1,3 +1,6 @@
 #-- Ignora la carpeta caché
 cache
 db
+server.cfg
+server.cfg
+start-server.cmd
